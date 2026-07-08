@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interview Prep Roadmap</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background: radial-gradient(circle, #0f172a, #020617);
+  color:white;
+  overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+  padding:20px 50px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index:10;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:bold;
+  color:cyan;
+}
+
+/* HERO */
+.hero{
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  min-height:100vh;
+  padding:100px 50px 50px;
+}
+
+/* TEXT */
+.hero-text{
+  max-width:420px;
+}
+
+.glow{
+  font-size:44px;
+  animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+  from{ text-shadow:0 0 10px cyan; }
+  to{ text-shadow:0 0 30px #00bfff; }
+}
+
+.btn{
+  margin-top:20px;
+  padding:10px 20px;
+  background:cyan;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.1);
+}
+
+/* ROADMAP */
+.roadmap{
+  position:relative;
+  width:450px;
+  padding-left:40px;
+}
+
+/* vertical line */
+.roadmap::before{
+  content:"";
+  position:absolute;
+  left:18px;
+  top:0;
+  width:2px;
+  height:100%;
+  background:cyan;
+  box-shadow:0 0 10px cyan;
+}
+
+/* STEP CARD */
+.step{
+  position:relative;
+  background:rgba(255,255,255,0.08);
+  border:1px solid cyan;
+  border-radius:15px;
+  padding:15px;
+  margin-bottom:25px;
+  backdrop-filter:blur(10px);
+  transition:0.4s;
+  animation:float 4s infinite ease-in-out;
+  transform-style:preserve-3d;
+}
+
+/* 3D hover */
+.step:hover{
+  transform:translateY(-5px) rotateX(6deg) rotateY(6deg);
+  box-shadow:0 0 20px cyan;
+}
+
+/* DOT */
+.step::before{
+  content:"";
+  position:absolute;
+  left:-30px;
+  top:20px;
+  width:14px;
+  height:14px;
+  background:cyan;
+  border-radius:50%;
+  box-shadow:0 0 10px cyan;
+}
+
+/* STEP TEXT */
+.step h3{
+  color:cyan;
+  margin-bottom:5px;
+}
+
+.step p{
+  font-size:14px;
+  opacity:0.8;
+}
+
+/* ANIMATION */
+@keyframes float{
+  0%,100%{ transform:translateY(0px); }
+  50%{ transform:translateY(-10px); }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Interview Prep Roadmap</div>
+</header>
+
+<section class="hero">
+
+  <!-- LEFT TEXT -->
+  <div class="hero-text">
+    <h1 class="glow">Crack Interviews</h1>
+    <p>Step-by-step preparation roadmap for frontend developers</p>
+    <button class="btn">Start Practice</button>
+  </div>
+
+  <!-- RIGHT ROADMAP -->
+  <div class="roadmap">
+
+    <div class="step">
+      <h3>Step 1: Learn Basics</h3>
+      <p>HTML structure, CSS fundamentals, JS basics</p>
+    </div>
+
+    <div class="step">
+      <h3>Step 2: Practice Questions</h3>
+      <p>HTML semantic, CSS flexbox/grid, JS closures</p>
+    </div>
+
+    <div class="step">
+      <h3>Step 3: Build Projects</h3>
+      <p>Portfolio, job portal, UI clones</p>
+    </div>
+
+    <div class="step">
+      <h3>Step 4: Mock Interviews</h3>
+      <p>Practice coding + HR questions</p>
+    </div>
+
+    <div class="step">
+      <h3>Step 5: Final Revision</h3>
+      <p>Revise notes, patterns, and concepts</p>
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>

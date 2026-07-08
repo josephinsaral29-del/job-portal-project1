@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply Now</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    overflow:hidden;
+}
+
+/* Animated Background */
+body::before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:#00c6ff;
+    border-radius:50%;
+    top:-80px;
+    left:-80px;
+    filter:blur(80px);
+    animation:move1 8s infinite alternate;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    background:#6a11cb;
+    border-radius:50%;
+    bottom:-100px;
+    right:-100px;
+    filter:blur(100px);
+    animation:move2 10s infinite alternate;
+}
+
+@keyframes move1{
+    from{transform:translate(0,0);}
+    to{transform:translate(80px,60px);}
+}
+
+@keyframes move2{
+    from{transform:translate(0,0);}
+    to{transform:translate(-80px,-50px);}
+}
+
+.form-container{
+    width:430px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(20px);
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+    animation:popup 1s ease;
+    z-index:1;
+}
+
+@keyframes popup{
+    from{
+        opacity:0;
+        transform:translateY(40px) scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+h2{
+    color:white;
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.input-box{
+    margin-bottom:18px;
+}
+
+.input-box input{
+    width:100%;
+    padding:13px;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    font-size:15px;
+}
+
+.input-box input:focus{
+    box-shadow:0 0 10px #00d4ff;
+}
+
+/* Resume Button */
+.file-label{
+    display:block;
+    text-align:center;
+    background:#00b4ff;
+    color:white;
+    padding:12px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.file-label:hover{
+    background:#0088cc;
+    transform:scale(1.03);
+}
+
+#file-name{
+    color:white;
+    text-align:center;
+    margin-top:10px;
+    font-size:14px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#00b4ff;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#0088cc;
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,180,255,.5);
+}
+.input-box{
+    color: white;
+    
+}
+</style>
+</head>
+
+<body>
+
+<div class="form-container">
+
+<h2>💼 Job Application</h2>
+<p style="text-align:center;color:white;margin-bottom:20px;">
+Join our team by filling out the application form.
+</p>
+
+<form id="contact-form">
+
+    <div class="input-box">
+        <input type="text" name="name" placeholder="👤Full Name" required>
+    </div>
+
+    <div class="input-box">
+        <input type="email" name="email" placeholder="📧Email" required>
+    </div>
+
+    <div class="input-box">
+        <input type="text" name="phone" placeholder="📞Phone" required>
+    </div>
+
+    <div class="input-box">
+        <input type="text" name="job" placeholder=" 💼Job Position" required>
+    </div>
+
+
+    <div class="input-box">
+        <input type="text" name="skill" placeholder=" 🎯skill" required>
+    </div>
+<button type="submit">
+🚀 Apply Now
+</button>
+
+</form>
+
+</div>
+
+<!-- EMAILJS SCRIPT -->
+ <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+console.log("SCRIPT STARTED");
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    emailjs.init("BT4Pt_kqdmDTYW_oo"); 
+    // 👆 replace ONLY this
+
+    const form = document.getElementById("contact-form");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        console.log("FORM SUBMITTED");
+
+        emailjs.sendForm(
+            "service_8vll9od",   // replace
+           "template_edplsii" ,  // replace
+            form
+        )
+        .then(() => {
+            alert("Message sent successfully!");
+            form.reset();
+        })
+        
+        .catch((err) => {
+    console.log("EMAILJS ERROR:", err);
+    alert("Status: " + err.status + "\nText: " + err.text);
+});
+    });
+
+});
+</script>
+
+</body>
+</html>

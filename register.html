@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CareerHub | Register</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+/* BACKGROUND */
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#081b29,#0f3b5f,#1b4965,#3a86ff);
+background-size:400% 400%;
+animation:bg 12s infinite alternate;
+padding:20px;
+}
+
+@keyframes bg{
+0%{background-position:left;}
+100%{background-position:right;}
+}
+
+/* CONTAINER */
+.container{
+width:900px;
+max-width:95%;
+display:grid;
+grid-template-columns:1fr 1fr;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,0.2);
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 25px 60px rgba(0,0,0,0.35);
+}
+
+/* LEFT SIDE */
+.left{
+padding:40px;
+color:white;
+}
+
+.left h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.left h1 span{
+color:#00d4ff;
+}
+
+.left p{
+font-size:15px;
+opacity:0.9;
+line-height:26px;
+margin-bottom:30px;
+}
+
+/* BENEFITS */
+.benefit{
+margin-bottom:18px;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.benefit i{
+color:#00d4ff;
+}
+
+/* RIGHT FORM */
+.form{
+background:white;
+padding:40px;
+}
+
+.form h2{
+margin-bottom:20px;
+color:#0f3b5f;
+}
+
+/* INPUT */
+.inputBox{
+margin-bottom:15px;
+}
+
+.inputBox input{
+width:100%;
+padding:14px;
+border:none;
+outline:none;
+background:#eef4ff;
+border-radius:10px;
+font-size:15px;
+transition:0.3s;
+}
+
+.inputBox input:focus{
+transform:scale(1.03);
+background:#dceeff;
+}
+
+/* BUTTON */
+button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:10px;
+background:linear-gradient(90deg,#0077ff,#00d4ff);
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.4s;
+}
+
+button:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 25px rgba(0,212,255,0.4);
+}
+
+/* LOGIN LINK */
+.login-link{
+text-align:center;
+margin-top:15px;
+font-size:14px;
+}
+
+.login-link a{
+color:#0077ff;
+text-decoration:none;
+}
+
+/* MESSAGE */
+#msg{
+text-align:center;
+margin-bottom:10px;
+font-weight:600;
+}
+
+/* RESPONSIVE */
+@media(max-width:850px){
+.container{
+grid-template-columns:1fr;
+}
+.left{
+text-align:center;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- LEFT SIDE -->
+<div class="left">
+
+<h1>Join <span>CareerHub</span></h1>
+
+<p>Create your account and start applying for your dream jobs easily.</p>
+
+<div class="benefit">
+<i class="fas fa-check-circle"></i>
+<span>Access thousands of jobs</span>
+</div>
+
+<div class="benefit">
+<i class="fas fa-check-circle"></i>
+<span>Get personalized recommendations</span>
+</div>
+
+<div class="benefit">
+<i class="fas fa-check-circle"></i>
+<span>Apply in one click</span>
+</div>
+
+</div>
+
+<!-- FORM -->
+<div class="form">
+
+<h2>Create Account</h2>
+
+<form onsubmit="return register(event)">
+
+<div class="inputBox">
+<input type="text" placeholder="Full Name">
+</div>
+
+<div class="inputBox">
+<input type="email" placeholder="Email Address">
+</div>
+
+<div class="inputBox">
+<input type="password" placeholder="Password">
+</div>
+
+<div class="inputBox">
+<input type="password" placeholder="Confirm Password">
+</div>
+
+<!-- MESSAGE -->
+<div id="msg"></div>
+
+<button type="submit">Register</button>
+
+</form>
+
+<div class="login-link">
+Already have an account? <a href="login.html">Login</a>
+</div>
+
+</div>
+
+</div>
+
+<script>
+function register(event){
+event.preventDefault();
+
+let inputs = document.querySelectorAll(".inputBox input");
+
+let name = inputs[0].value;
+let email = inputs[1].value;
+let pass = inputs[2].value;
+let cpass = inputs[3].value;
+
+let msg = document.getElementById("msg");
+
+// validation
+if(name=="" || email=="" || pass=="" || cpass==""){
+msg.style.color="red";
+msg.innerText="⚠ Please fill all fields";
+return false;
+}
+
+if(pass !== cpass){
+msg.style.color="red";
+msg.innerText="⚠ Passwords do not match";
+return false;
+}
+
+if(pass.length < 6){
+msg.style.color="red";
+msg.innerText="⚠ Password must be at least 6 characters";
+return false;
+}
+
+// success message
+msg.style.color="green";
+msg.innerText="🎉 Registration Successful! Redirecting...";
+
+// redirect
+setTimeout(()=>{
+window.location.href="login.html";
+},2000);
+
+return false;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CareerHub | Resume Building Guide</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+
+overflow-x:hidden;
+
+color:white;
+
+}
+
+/* Floating Background */
+
+.circle{
+
+position:absolute;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.08);
+
+animation:float 8s infinite ease-in-out;
+
+backdrop-filter:blur(5px);
+
+}
+
+.circle:nth-child(1){
+
+width:180px;
+
+height:180px;
+
+left:5%;
+
+top:120px;
+
+}
+
+.circle:nth-child(2){
+
+width:120px;
+
+height:120px;
+
+right:10%;
+
+top:350px;
+
+animation-duration:10s;
+
+}
+
+.circle:nth-child(3){
+
+width:250px;
+
+height:250px;
+
+left:70%;
+
+bottom:80px;
+
+animation-duration:12s;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-25px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/* Navigation */
+
+nav{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 8%;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+z-index:1000;
+
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+
+}
+
+.logo{
+
+font-size:30px;
+
+font-weight:700;
+
+color:white;
+
+letter-spacing:1px;
+
+}
+
+nav ul{
+
+display:flex;
+
+list-style:none;
+
+}
+
+nav ul li{
+
+margin-left:30px;
+
+}
+
+nav ul li a{
+
+text-decoration:none;
+
+color:white;
+
+font-size:17px;
+
+transition:.4s;
+
+position:relative;
+
+}
+
+nav ul li a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-5px;
+
+width:0;
+
+height:3px;
+
+background:#22c55e;
+
+transition:.4s;
+
+}
+
+nav ul li a:hover::after{
+
+width:100%;
+
+}
+
+nav ul li a:hover{
+
+color:#22c55e;
+
+}
+
+/* Hero */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:120px 10%;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.hero-content{
+
+width:55%;
+
+animation:slideLeft 1.2s;
+
+}
+
+.hero-content h1{
+
+font-size:60px;
+
+line-height:1.2;
+
+margin-bottom:20px;
+
+}
+
+.hero-content span{
+
+color:#22c55e;
+
+}
+
+.hero-content p{
+
+font-size:19px;
+
+line-height:1.9;
+
+margin-bottom:35px;
+
+color:#dbeafe;
+
+}
+
+.buttons{
+
+display:flex;
+
+gap:20px;
+
+}
+
+.btn{
+
+padding:15px 35px;
+
+background:#22c55e;
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:white;
+
+font-weight:600;
+
+transition:.4s;
+
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+
+}
+
+.btn:hover{
+
+transform:translateY(-8px) scale(1.05);
+
+}
+
+.btn2{
+
+padding:15px 35px;
+
+border:2px solid white;
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:white;
+
+transition:.4s;
+
+}
+
+.btn2:hover{
+
+background:white;
+
+color:#1e3a8a;
+
+}
+
+/* Resume Illustration */
+
+.hero-image{
+
+width:45%;
+
+display:flex;
+
+justify-content:center;
+
+animation:slideRight 1.2s;
+
+}
+
+.resume-box{
+
+width:350px;
+
+height:430px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(15px);
+
+border-radius:25px;
+
+padding:30px;
+
+transform:rotate(-8deg);
+
+transition:.5s;
+
+box-shadow:0 20px 45px rgba(0,0,0,.35);
+
+}
+
+.resume-box:hover{
+
+transform:rotate(0deg) scale(1.05);
+
+}
+
+.resume-box h2{
+
+margin-bottom:25px;
+
+text-align:center;
+
+}
+
+.line{
+
+height:14px;
+
+background:white;
+
+border-radius:10px;
+
+margin:15px 0;
+
+opacity:.9;
+
+}
+
+.line:nth-child(2){
+
+width:70%;
+
+}
+
+.line:nth-child(3){
+
+width:95%;
+
+}
+
+.line:nth-child(4){
+
+width:60%;
+
+}
+
+.line:nth-child(5){
+
+width:90%;
+
+}
+
+.line:nth-child(6){
+
+width:80%;
+
+}
+
+.line:nth-child(7){
+
+width:65%;
+
+}
+
+@keyframes slideLeft{
+
+from{
+
+transform:translateX(-100px);
+
+opacity:0;
+
+}
+
+to{
+
+transform:translateX(0);
+
+opacity:1;
+
+}
+
+}
+
+@keyframes slideRight{
+
+from{
+
+transform:translateX(100px);
+
+opacity:0;
+
+}
+
+to{
+
+transform:translateX(0);
+
+opacity:1;
+
+}
+
+}
+
+@media(max-width:900px){
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.hero-content,
+
+.hero-image{
+
+width:100%;
+
+}
+
+.buttons{
+
+justify-content:center;
+
+}
+
+.hero-content h1{
+
+font-size:42px;
+
+}
+
+nav{
+
+flex-direction:column;
+
+}
+
+nav ul{
+
+margin-top:15px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+
+<nav>
+
+<div class="logo">CareerHub</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="jobs.html">Jobs</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Create an <span>ATS-Friendly Resume</span> That Gets You Hired</h1>
+
+<p>
+Build a professional resume that highlights your education,
+skills, internships, certifications, and projects. Learn
+industry best practices to impress recruiters and increase
+your chances of landing your dream job.
+</p>
+
+<div class="buttons">
+
+<a href="#about" class="btn">Explore Guide</a>
+
+<a href="jobs.html" class="btn2">Explore Jobs</a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<div class="resume-box">
+
+<h2>My Resume</h2>
+
+<div class="line"></div>
+
+<div class="line"></div>
+
+<div class="line"></div>
+
+<div class="line"></div>
+
+<div class="line"></div>
+
+<div class="line"></div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= ABOUT SECTION ================= -->
+
+<section id="about" class="about">
+
+    <h2 class="section-title">Why is a Resume Important?</h2>
+
+    <p class="section-text">
+        Your resume is the first impression a recruiter has of you.
+        A professional resume clearly presents your education,
+        technical skills, projects, internships, certifications,
+        achievements, and career objectives in a simple and attractive
+        format. A strong resume increases your chances of getting
+        shortlisted for interviews.
+    </p>
+
+</section>
+
+<!-- ================= RESUME STRUCTURE ================= -->
+
+<section class="resume-guide">
+
+<h2 class="section-title">
+Essential Resume Sections
+</h2>
+
+<div class="guide-container">
+
+<div class="guide-card">
+
+<div class="icon">👤</div>
+
+<h3>Personal Information</h3>
+
+<p>
+Include your full name, professional email,
+phone number, LinkedIn profile,
+GitHub profile and location.
+</p>
+
+</div>
+
+<div class="guide-card">
+
+<div class="icon">🎓</div>
+
+<h3>Education</h3>
+
+<p>
+Mention your degree,
+college,
+CGPA,
+graduation year and relevant coursework.
+</p>
+
+</div>
+
+<div class="guide-card">
+
+<div class="icon">💻</div>
+
+<h3>Technical Skills</h3>
+
+<p>
+List HTML,
+CSS,
+JavaScript,
+Python,
+SQL,
+Git,
+GitHub and other technologies.
+</p>
+
+</div>
+
+<div class="guide-card">
+
+<div class="icon">📂</div>
+
+<h3>Projects</h3>
+
+<p>
+Explain your projects,
+technologies used,
+features developed and your contributions.
+</p>
+
+</div>
+
+<div class="guide-card">
+
+<div class="icon">🏢</div>
+
+<h3>Internship</h3>
+
+<p>
+Mention your internship experience,
+testing work,
+responsibilities,
+and achievements.
+</p>
+
+</div>
+
+<div class="guide-card">
+
+<div class="icon">🏆</div>
+
+<h3>Certifications</h3>
+
+<p>
+Include certifications from
+FreeCodeCamp,
+Coursera,
+Cisco,
+Microsoft,
+NPTEL or Udemy.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+/* ABOUT */
+
+.about{
+
+padding:100px 10%;
+
+text-align:center;
+
+}
+
+.section-title{
+
+font-size:42px;
+
+margin-bottom:25px;
+
+color:white;
+
+}
+
+.section-text{
+
+font-size:18px;
+
+line-height:2;
+
+max-width:900px;
+
+margin:auto;
+
+color:#dbeafe;
+
+}
+
+/* GUIDE */
+
+.resume-guide{
+
+padding:80px 8%;
+
+}
+
+.guide-container{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+margin-top:50px;
+
+}
+
+.guide-card{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+padding:35px;
+
+border-radius:25px;
+
+text-align:center;
+
+transition:.5s;
+
+box-shadow:0 20px 40px rgba(0,0,0,.30);
+
+border:1px solid rgba(255,255,255,.15);
+
+}
+
+.guide-card:hover{
+
+transform:translateY(-15px) rotateX(10deg);
+
+background:rgba(255,255,255,.15);
+
+}
+
+.icon{
+
+font-size:60px;
+
+margin-bottom:20px;
+
+animation:floatIcon 3s infinite;
+
+}
+
+.guide-card h3{
+
+font-size:24px;
+
+margin-bottom:15px;
+
+}
+
+.guide-card p{
+
+line-height:1.8;
+
+color:#dbeafe;
+
+}
+
+@keyframes floatIcon{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+</style>
+<!-- ================= RESUME WRITING TIPS ================= -->
+
+<section class="tips-section">
+
+<h2 class="section-title">
+Resume Writing Tips
+</h2>
+
+<div class="tips-container">
+
+<div class="tip-box">
+
+<span>✔</span>
+
+<h3>Keep it Short</h3>
+
+<p>
+A fresher's resume should ideally be one page. Recruiters spend only a few
+seconds reviewing each resume, so keep it concise and easy to read.
+</p>
+
+</div>
+
+<div class="tip-box">
+
+<span>💻</span>
+
+<h3>Highlight Skills</h3>
+
+<p>
+Mention your programming languages, tools, frameworks, databases, and other
+technical skills that match the job description.
+</p>
+
+</div>
+
+<div class="tip-box">
+
+<span>📂</span>
+
+<h3>Show Your Projects</h3>
+
+<p>
+Include your best academic or personal projects with technologies used,
+features implemented, and the results achieved.
+</p>
+
+</div>
+
+<div class="tip-box">
+
+<span>🏢</span>
+
+<h3>Add Internship Experience</h3>
+
+<p>
+Describe your internship responsibilities, testing activities, development
+tasks, and accomplishments in clear bullet points.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= ATS TIPS ================= -->
+
+<section class="ats-section">
+
+<h2 class="section-title">
+
+ATS Friendly Resume Tips
+
+</h2>
+
+<div class="ats-card">
+
+<ul>
+
+<li>✔ Use simple fonts like Poppins, Arial, or Calibri.</li>
+
+<li>✔ Keep headings clear and consistent.</li>
+
+<li>✔ Include keywords from the job description.</li>
+
+<li>✔ Save your resume as a PDF unless instructed otherwise.</li>
+
+<li>✔ Avoid excessive graphics and complicated tables.</li>
+
+<li>✔ Use action words such as Developed, Tested, Designed, Created, and Implemented.</li>
+
+<li>✔ Add measurable achievements whenever possible.</li>
+
+<li>✔ Proofread carefully for spelling and grammar.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- ================= COMMON MISTAKES ================= -->
+
+<section class="mistakes">
+
+<h2 class="section-title">
+
+Common Resume Mistakes
+
+</h2>
+
+<div class="guide-container">
+
+<div class="guide-card">
+
+<div class="icon">❌</div>
+
+<h3>Grammar Errors</h3>
+
+<p>
+Always proofread your resume before submitting it.
+</p>
+
+</div>
+
+<div class="guide-card">
+
+<div class="icon">📄</div>
+
+<h3>Long Resume</h3>
+
+<p>
+Avoid adding unnecessary information that makes your resume too lengthy.
+</p>
+
+</div>
+
+<div class="guide-card">
+
+<div class="icon">🎨</div>
+
+<h3>Poor Formatting</h3>
+
+<p>
+Maintain consistent spacing, fonts, and headings throughout your resume.
+</p>
+
+</div>
+
+<div class="guide-card">
+
+<div class="icon">🚫</div>
+
+<h3>Irrelevant Details</h3>
+
+<p>
+Include only information that is relevant to the role you're applying for.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CALL TO ACTION ================= -->
+
+<section class="cta">
+
+<h2>Ready to Build Your Resume?</h2>
+
+<p>
+A professional resume can open the door to internships and job opportunities.
+Start building yours today and showcase your strengths with confidence.
+</p>
+
+<a href="jobs.html" class="btn">Explore Jobs</a>
+
+</section>
+
+<style>
+
+/* Resume Tips */
+
+.tips-section{
+
+padding:100px 8%;
+
+}
+
+.tips-container{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
+
+margin-top:50px;
+
+}
+
+.tip-box{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+padding:35px;
+
+border-radius:25px;
+
+text-align:center;
+
+transition:.5s;
+
+box-shadow:0 20px 40px rgba(0,0,0,.30);
+
+}
+
+.tip-box:hover{
+
+transform:translateY(-15px) scale(1.03);
+
+}
+
+.tip-box span{
+
+font-size:55px;
+
+display:block;
+
+margin-bottom:20px;
+
+}
+
+.tip-box h3{
+
+margin-bottom:15px;
+
+font-size:24px;
+
+}
+
+.tip-box p{
+
+line-height:1.8;
+
+color:#dbeafe;
+
+}
+
+/* ATS */
+
+.ats-section{
+
+padding:90px 8%;
+
+}
+
+.ats-card{
+
+background:rgba(255,255,255,.08);
+
+padding:40px;
+
+border-radius:25px;
+
+backdrop-filter:blur(15px);
+
+box-shadow:0 20px 40px rgba(0,0,0,.30);
+
+}
+
+.ats-card ul{
+
+padding-left:20px;
+
+line-height:2.2;
+
+font-size:18px;
+
+color:#dbeafe;
+
+}
+
+/* CTA */
+
+.cta{
+
+padding:100px 8%;
+
+text-align:center;
+
+background:linear-gradient(135deg,#2563eb,#1e3a8a);
+
+margin-top:80px;
+
+}
+
+.cta h2{
+
+font-size:45px;
+
+margin-bottom:20px;
+
+}
+
+.cta p{
+
+max-width:800px;
+
+margin:auto;
+
+line-height:2;
+
+font-size:18px;
+
+margin-bottom:35px;
+
+}
+
+</style>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-box">
+
+<h2>CareerHub</h2>
+
+<p>
+CareerHub helps students and job seekers build professional resumes,
+prepare for interviews, and discover exciting career opportunities.
+Start your journey toward a successful career with us.
+</p>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Quick Links</h3>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="jobs.html">Jobs</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Resume Tips</h3>
+
+<ul>
+
+<li>ATS Friendly Resume</li>
+
+<li>Professional Summary</li>
+
+<li>Technical Skills</li>
+
+<li>Projects</li>
+
+<li>Internship Experience</li>
+
+</ul>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Contact</h3>
+
+<p>📧 careerhub@gmail.com</p>
+
+<p>📞 +91 9876543210</p>
+
+<p>📍 Chennai, India</p>
+
+</div>
+
+</div>
+
+<div class="social-icons">
+
+<a href="#">🌐</a>
+
+<a href="#">💼</a>
+
+<a href="#">📘</a>
+
+<a href="#">📷</a>
+
+<a href="#">▶</a>
+
+</div>
+
+<p class="copyright">
+
+© 2026 CareerHub. All Rights Reserved.
+
+</p>
+
+</footer>
+
+<style>
+
+/* ================= FOOTER ================= */
+
+.footer{
+
+background:#081229;
+
+padding:80px 8% 30px;
+
+margin-top:80px;
+
+}
+
+.footer-container{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:40px;
+
+}
+
+.footer-box h2,
+.footer-box h3{
+
+margin-bottom:20px;
+
+color:#22c55e;
+
+}
+
+.footer-box p{
+
+color:#cbd5e1;
+
+line-height:1.8;
+
+}
+
+.footer-box ul{
+
+list-style:none;
+
+}
+
+.footer-box ul li{
+
+margin:15px 0;
+
+color:#cbd5e1;
+
+transition:.4s;
+
+cursor:pointer;
+
+}
+
+.footer-box ul li:hover{
+
+transform:translateX(10px);
+
+color:#22c55e;
+
+}
+
+.footer-box a{
+
+text-decoration:none;
+
+color:#cbd5e1;
+
+}
+
+.footer-box a:hover{
+
+color:#22c55e;
+
+}
+
+.social-icons{
+
+margin-top:50px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+}
+
+.social-icons a{
+
+width:55px;
+
+height:55px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(255,255,255,.08);
+
+border-radius:50%;
+
+font-size:26px;
+
+text-decoration:none;
+
+transition:.5s;
+
+}
+
+.social-icons a:hover{
+
+transform:translateY(-10px) rotate(360deg);
+
+background:#22c55e;
+
+}
+
+.copyright{
+
+margin-top:40px;
+
+text-align:center;
+
+color:#94a3b8;
+
+font-size:16px;
+
+}
+
+</style>
+
+</body>
+
+</html>

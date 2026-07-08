@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CareerHub | About Us</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:linear-gradient(135deg,#071428,#0f3460,#16213e);
+color:white;
+overflow-x:hidden;
+
+}
+
+/* Background */
+
+body::before{
+
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+background:#00bfff;
+filter:blur(220px);
+opacity:.25;
+top:-200px;
+left:-150px;
+z-index:-2;
+
+}
+
+body::after{
+
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+background:#8b5cf6;
+filter:blur(220px);
+opacity:.25;
+bottom:-200px;
+right:-150px;
+z-index:-2;
+
+}
+
+/* Floating Circles */
+
+.circle{
+
+position:fixed;
+border-radius:50%;
+background:rgba(255,255,255,.05);
+animation:float 9s infinite ease-in-out;
+
+}
+
+.c1{
+width:120px;
+height:120px;
+left:10%;
+top:20%;
+}
+
+.c2{
+width:180px;
+height:180px;
+right:15%;
+top:10%;
+animation-delay:2s;
+}
+
+.c3{
+width:90px;
+height:90px;
+left:45%;
+bottom:10%;
+animation-delay:4s;
+}
+
+@keyframes float{
+
+0%,100%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-35px);
+}
+
+}
+
+/* Hero */
+
+.hero{
+
+padding:90px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:60px;
+flex-wrap:wrap;
+
+}
+
+.hero-text{
+
+flex:1;
+
+}
+
+.hero-text h1{
+
+font-size:60px;
+line-height:1.2;
+
+}
+
+.hero-text span{
+
+color:#00d4ff;
+
+}
+
+.hero-text p{
+
+margin-top:25px;
+line-height:1.9;
+color:#d8d8d8;
+font-size:17px;
+
+}
+
+.hero-img{
+
+flex:1;
+display:flex;
+justify-content:center;
+
+}
+
+.hero-box{
+
+width:380px;
+height:380px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.2);
+
+backdrop-filter:blur(15px);
+
+border-radius:30px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:150px;
+
+box-shadow:0 20px 50px rgba(0,0,0,.5);
+
+animation:rotateCard 6s ease-in-out infinite;
+
+transition:.5s;
+
+}
+
+.hero-box:hover{
+
+transform:rotateY(20deg) rotateX(10deg) scale(1.05);
+
+}
+
+@keyframes rotateCard{
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+}
+
+/* Section */
+
+section{
+
+padding:80px 8%;
+
+}
+
+.title{
+
+text-align:center;
+font-size:42px;
+margin-bottom:60px;
+
+}
+
+.title span{
+
+color:#00d4ff;
+
+}
+
+/* Cards */
+
+.cards{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+padding:35px;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.15);
+
+transition:.5s;
+
+text-align:center;
+
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+}
+
+.card:hover{
+
+transform:translateY(-15px) rotateX(10deg);
+
+box-shadow:0 25px 45px rgba(0,212,255,.3);
+
+}
+
+.card h2{
+
+font-size:50px;
+margin-bottom:15px;
+
+}
+
+.card h3{
+
+margin-bottom:15px;
+color:#00d4ff;
+
+}
+
+.card p{
+
+color:#ddd;
+line-height:1.8;
+
+}
+
+/* Timeline */
+
+.timeline{
+
+position:relative;
+margin-top:40px;
+
+}
+
+.timeline::before{
+
+content:"";
+position:absolute;
+left:50%;
+width:4px;
+height:100%;
+background:#00d4ff;
+transform:translateX(-50%);
+
+}
+
+.step{
+
+width:45%;
+padding:25px;
+background:rgba(255,255,255,.08);
+border-radius:20px;
+margin-bottom:40px;
+position:relative;
+transition:.5s;
+backdrop-filter:blur(15px);
+
+}
+
+.step:hover{
+
+transform:scale(1.05);
+
+}
+
+.left{
+
+margin-right:auto;
+
+}
+
+.right{
+
+margin-left:auto;
+
+}
+
+.step h3{
+
+color:#00d4ff;
+margin-bottom:10px;
+
+}
+
+/* Team */
+
+.team{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+
+}
+
+.member{
+
+background:rgba(255,255,255,.08);
+
+padding:30px;
+
+border-radius:25px;
+
+text-align:center;
+
+transition:.5s;
+
+backdrop-filter:blur(15px);
+
+}
+
+.member:hover{
+
+transform:translateY(-12px);
+
+}
+
+.avatar{
+
+width:120px;
+height:120px;
+border-radius:50%;
+background:linear-gradient(135deg,#00d4ff,#8b5cf6);
+margin:auto;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:50px;
+margin-bottom:20px;
+
+}
+
+/* CTA */
+
+.cta{
+
+text-align:center;
+
+background:rgba(255,255,255,.08);
+
+padding:70px;
+
+border-radius:30px;
+
+backdrop-filter:blur(15px);
+
+box-shadow:0 15px 40px rgba(0,0,0,.4);
+
+}
+
+.cta h2{
+
+font-size:42px;
+
+margin-bottom:20px;
+
+}
+
+.cta p{
+
+margin-bottom:30px;
+color:#ddd;
+
+}
+
+button{
+
+padding:16px 40px;
+
+border:none;
+
+border-radius:50px;
+
+background:linear-gradient(45deg,#00d4ff,#8b5cf6);
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 10px 30px rgba(0,212,255,.4);
+
+}
+
+/* Footer */
+
+footer{
+
+padding:30px;
+text-align:center;
+background:#071428;
+margin-top:60px;
+color:#aaa;
+
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.hero-text h1{
+
+font-size:45px;
+
+}
+
+.timeline::before{
+
+display:none;
+
+}
+
+.step{
+
+width:100%;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+<div class="circle c3"></div>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>About <span>CareerHub</span></h1>
+
+<p>
+
+CareerHub is a smart online job portal built to connect talented job seekers with trusted employers. Our mission is to simplify job searching by providing thousands of verified opportunities, an easy application process, career guidance, and an intuitive user experience.
+
+</p>
+
+</div>
+
+<div class="hero-img">
+
+<div class="hero-box">
+
+💼
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Features -->
+
+<section>
+
+<h1 class="title">Why Choose <span>CareerHub?</span></h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>🚀</h2>
+
+<h3>Fast Job Search</h3>
+
+<p>
+Find jobs quickly using advanced search filters based on skills, location, experience, and company.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>🔒</h2>
+
+<h3>Verified Companies</h3>
+
+<p>
+Only trusted employers can post opportunities, ensuring a safe and reliable hiring experience.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>📄</h2>
+
+<h3>Easy Apply</h3>
+
+<p>
+Upload your resume once and apply to multiple jobs instantly with just a single click.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>🎯</h2>
+
+<h3>Career Growth</h3>
+
+<p>
+Receive career tips, interview guidance, resume improvement suggestions, and personalized recommendations.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Timeline -->
+
+<section>
+
+<h1 class="title">Our <span>Journey</span></h1>
+
+<div class="timeline">
+
+<div class="step left">
+
+<h3>Step 1</h3>
+
+<p>Created CareerHub with the vision of simplifying recruitment.</p>
+
+</div>
+
+<div class="step right">
+
+<h3>Step 2</h3>
+
+<p>Added secure login, registration, and job posting features.</p>
+
+</div>
+
+<div class="step left">
+
+<h3>Step 3</h3>
+
+<p>Integrated job search filters and responsive UI.</p>
+
+</div>
+
+<div class="step right">
+
+<h3>Step 4</h3>
+
+<p>Expanding CareerHub with AI-powered recommendations and interview preparation.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Team -->
+
+<section>
+
+<h1 class="title">Meet Our <span>Team</span></h1>
+
+<div class="team">
+
+<div class="member">
+
+<div class="avatar">👨</div>
+
+<h3>Project Developer</h3>
+
+<p>Designs and develops the CareerHub platform with modern technologies.</p>
+
+</div>
+
+<div class="member">
+
+<div class="avatar">🎨</div>
+
+<h3>UI Designer</h3>
+
+<p>Creates beautiful user interfaces and interactive experiences.</p>
+
+</div>
+
+<div class="member">
+
+<div class="avatar">💻</div>
+
+<h3>Backend Developer</h3>
+
+<p>Develops secure APIs, databases, and authentication systems.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section>
+
+<div class="cta">
+
+<h2>Ready to Build Your Career?</h2>
+
+<p>
+
+Discover thousands of opportunities and start your journey with CareerHub today.
+
+</p>
+
+<button onclick="window.location.href='jobs.html'">
+
+Explore Jobs
+
+</button>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 CareerHub | Empowering Careers • Connecting Talent with Opportunity
+
+</footer>
+
+</body>
+</html>

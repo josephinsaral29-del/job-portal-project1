@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CareerHub - Jobs</title>
+
+<style>
+
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#061a2b,#102a43,#1b2f4a);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ================= PAGE LOAD ANIMATION ================= */
+
+body{
+    animation:pageFade 1.2s ease-in-out;
+}
+
+@keyframes pageFade{
+    from{
+        opacity:0;
+        transform:scale(0.98);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* ================= HEADER ================= */
+
+header{
+    text-align:center;
+    padding:70px 20px 30px;
+    animation:slideDown 1s ease;
+}
+
+header h1{
+    font-size:52px;
+    color:#4dd0e1;
+}
+
+header p{
+    color:#cbd5e1;
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* ================= HEADER ANIMATION ================= */
+
+@keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ================= GRID ================= */
+
+.jobs-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    padding:60px 10%;
+}
+
+/* ================= CARD ================= */
+
+.job-card{
+    position:relative;
+    background:rgba(255,255,255,0.07);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:22px;
+    padding:28px;
+    overflow:hidden;
+
+    /* ANIMATION ON LOAD */
+    animation:cardPop 0.8s ease forwards;
+    opacity:0;
+}
+
+/* Stagger animation */
+.job-card:nth-child(1){ animation-delay:0.1s; }
+.job-card:nth-child(2){ animation-delay:0.2s; }
+.job-card:nth-child(3){ animation-delay:0.3s; }
+.job-card:nth-child(4){ animation-delay:0.4s; }
+.job-card:nth-child(5){ animation-delay:0.5s; }
+.job-card:nth-child(6){ animation-delay:0.6s; }
+/* (continues automatically visually fine) */
+
+@keyframes cardPop{
+    from{
+        opacity:0;
+        transform:translateY(40px) scale(0.9);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* Glow effect */
+
+.job-card::before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    background:rgba(77,208,225,0.15);
+    border-radius:50%;
+    top:-80px;
+    right:-80px;
+    filter:blur(50px);
+}
+
+.job-card::after{
+    content:"";
+    position:absolute;
+    width:160px;
+    height:160px;
+    background:rgba(139,92,246,0.15);
+    border-radius:50%;
+    bottom:-80px;
+    left:-80px;
+    filter:blur(50px);
+}
+
+/* Hover 3D */
+
+.job-card:hover{
+    transform:translateY(-12px) scale(1.04);
+    box-shadow:0 25px 50px rgba(77,208,225,0.2);
+    transition:0.4s;
+}
+
+/* TEXT */
+
+.job-card h3{
+    color:#4dd0e1;
+    margin-bottom:10px;
+}
+
+.job-card p{
+    margin:6px 0;
+    color:#d1d5db;
+}
+
+
+/* BUTTON */
+
+
+.apply-btn{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:100%;
+    height:50px;
+    margin-top:15px;
+
+    text-decoration:none;
+    border-radius:30px;
+
+    background:linear-gradient(45deg,#4dd0e1,#8b5cf6);
+    color:#fff;
+
+    font-weight:600;
+    transition:.3s;
+}
+
+.apply-btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 10px 25px rgba(77,208,225,.3);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+header h1{
+    font-size:34px;
+}
+
+.jobs-container{
+    padding:40px 6%;
+    gap:20px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Available Jobs 🚀</h1>
+    <p>Apply to your dream job instantly</p>
+</header>
+
+
+<section class="jobs-container">
+
+
+
+<script>
+const jobs = [
+"Frontend Developer","Backend Developer","Full Stack Developer","React Developer","Angular Developer",
+"Vue Developer","Java Developer","Python Developer","Django Developer","Flask Developer",
+"Data Analyst","Data Scientist","Machine Learning Engineer","AI Engineer","DevOps Engineer",
+"Cloud Engineer","AWS Engineer","Azure Engineer","Cyber Security Analyst","Network Engineer",
+"UI UX Designer","Graphic Designer","Product Designer","Mobile App Developer","Android Developer",
+"iOS Developer","Flutter Developer","Kotlin Developer","Software Tester","QA Engineer",
+"Automation Tester","Manual Tester","Database Administrator","SQL Developer","Oracle DBA",
+"System Engineer","IT Support Engineer","Technical Support","Business Analyst","Project Manager",
+"Scrum Master","HR Recruiter","Digital Marketing Executive","SEO Specialist","Content Writer",
+"Technical Writer","Sales Executive","Customer Support","Intern Software Developer","Graduate Trainee"
+];
+
+document.write(
+    jobs.map(job => `
+        <div class="job-card">
+            <h3>${job}</h3>
+            <p>Company: CareerHub Pvt Ltd</p>
+            <p>Location: Remote / India</p>
+            <a href="apply.html" class="apply-btn">Apply Now</a>
+        </div>
+    `).join("")
+);
+
+function searchJobs() {
+
+    let title = document.getElementById("jobSearch").value.toLowerCase();
+
+    let location = document.getElementById("locationSearch").value.toLowerCase();
+
+    let cards = document.querySelectorAll(".card");
+
+    let found = false;
+
+    cards.forEach(card => {
+
+        let job = card.querySelector("h2").textContent.toLowerCase();
+
+        let place = card.querySelector(".location").textContent.toLowerCase();
+
+        if (job.includes(title) && place.includes(location)) {
+            card.style.display = "block";
+            found = true;
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+    document.getElementById("noResult").style.display = found ? "none" : "block";
+}
+</script>
+
+</section>
+</body>
+</html>

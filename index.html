@@ -1,0 +1,2220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CareerHub -Job Portal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/homepg.css">
+</head>
+
+<body>
+    <style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#eef5ff;
+    color:#222;
+}
+
+/* ================= HERO ================= */
+
+.jobs-hero{
+    background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+    color:#fff;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.jobs-hero h1{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.jobs-hero p{
+    width:70%;
+    margin:auto;
+    line-height:1.8;
+    font-size:18px;
+}
+
+/* ================= SEARCH ================= */
+
+.search-section{
+    padding:40px 0;
+    display:flex;
+    justify-content:center;
+}
+
+.search-box{
+    width:90%;
+    max-width:1100px;
+    display:flex;
+    gap:15px;
+    background:#fff;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 15px 35px rgba(0,0,0,.1);
+}
+
+.search-box input{
+    flex:1;
+    padding:15px;
+    border:2px solid #dbeafe;
+    border-radius:10px;
+    outline:none;
+    font-size:16px;
+}
+
+.search-box input:focus{
+    border-color:#2563eb;
+}
+
+.search-box button{
+    padding:15px 35px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+.search-box button:hover{
+    background:#1d4ed8;
+    transform:translateY(-3px);
+}
+
+/* ================= JOBS ================= */
+
+.jobs-container{
+    width:90%;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+/* ================= JOB CARD ================= */
+
+.job-card{
+    background:#fff;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.4s;
+    border-top:6px solid #2563eb;
+}
+
+.job-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(37,99,235,.25);
+}
+
+.job-card h3{
+    color:#2563eb;
+    margin-bottom:15px;
+    font-size:24px;
+}
+
+.job-card p{
+    margin:10px 0;
+    color:#555;
+    line-height:1.6;
+}
+
+/* ================= BUTTONS ================= */
+
+.job-card button{
+    margin-top:20px;
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    transition:.3s;
+}
+
+.job-card button:first-of-type{
+    background:#2563eb;
+    color:white;
+}
+
+.job-card button:first-of-type:hover{
+    background:#1e40af;
+}
+
+.job-card button:last-of-type{
+    background:#f3f4f6;
+    color:#2563eb;
+    margin-left:10px;
+}
+
+.job-card button:last-of-type:hover{
+    background:#2563eb;
+    color:white;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    margin-top:80px;
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.footer-links{
+    margin:20px 0;
+}
+
+.footer-links a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:#60a5fa;
+}
+
+.social-icons{
+    margin:20px 0;
+}
+
+.social-icons a{
+    color:white;
+    margin:0 10px;
+    font-size:22px;
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    color:#60a5fa;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+.search-box{
+    flex-direction:column;
+}
+
+.jobs-hero h1{
+    font-size:34px;
+}
+
+.jobs-hero p{
+    width:90%;
+}
+
+.job-card{
+    text-align:center;
+}
+
+.job-card button{
+    width:100%;
+    margin:10px 0;
+}
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:linear-gradient(135deg,#071428,#0f3460,#16213e);
+
+    color:#fff;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+    position:relative;
+
+}
+
+/*==========================
+    ANIMATED BACKGROUND
+===========================*/
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:500px;
+    height:500px;
+
+    background:#00d4ff;
+
+    border-radius:50%;
+
+    filter:blur(170px);
+
+    top:-180px;
+    left:-180px;
+
+    opacity:.20;
+
+    animation:moveOne 10s infinite alternate ease-in-out;
+
+    z-index:-2;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:450px;
+    height:450px;
+
+    background:#8b5cf6;
+
+    border-radius:50%;
+
+    filter:blur(170px);
+
+    bottom:-170px;
+    right:-170px;
+
+    opacity:.20;
+
+    animation:moveTwo 10s infinite alternate ease-in-out;
+
+    z-index:-2;
+
+}
+
+@keyframes moveOne{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(120px,80px);
+
+    }
+
+}
+
+@keyframes moveTwo{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(-120px,-80px);
+
+    }
+
+}
+
+/*==========================
+        NAVBAR
+===========================*/
+
+.navbar{
+
+    width:92%;
+
+    margin:20px auto;
+
+    padding:16px 40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:18px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+
+    position:sticky;
+
+    top:15px;
+
+    z-index:999;
+
+}
+
+/* Logo */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.logo img{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    border:3px solid #00d4ff;
+
+    transition:.5s;
+
+}
+
+.logo img:hover{
+
+    transform:rotateY(180deg) scale(1.08);
+
+    box-shadow:0 0 20px #00d4ff;
+
+}
+
+.logo h2{
+
+    color:#00d4ff;
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+/* Navigation */
+
+.nav-links{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+.nav-links li{
+
+    position:relative;
+
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:17px;
+
+    transition:.4s;
+
+}
+
+.nav-links a:hover{
+
+    color:#00d4ff;
+
+}
+
+.nav-links li::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:#00d4ff;
+
+    transition:.4s;
+
+}
+
+.nav-links li:hover::after{
+
+    width:100%;
+
+}
+
+/* Buttons */
+
+.buttons{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+
+.register-btn{
+
+    text-decoration:none;
+
+    padding:12px 26px;
+
+    border-radius:35px;
+
+    transition:.4s;
+
+    font-weight:600;
+    
+
+}
+.login-btn{
+    text-decoration:none;
+
+    padding: 12px 25px;
+
+    border-radius:35px;
+
+    transition:.4s;
+
+    font-weight:600;
+    
+    
+
+}
+
+.login-btn{
+
+    color:#00d4ff;
+
+    border:2px solid #00d4ff;
+
+}
+
+.login-btn:hover{
+
+    background:#00d4ff;
+
+    color:#071428;
+
+    transform:translateY(-4px);
+
+}
+
+.register-btn{
+
+    color:white;
+
+    background:linear-gradient(45deg,#00d4ff,#8b5cf6);
+
+}
+
+.register-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 10px 25px rgba(0,212,255,.4);
+
+}
+
+/*==========================
+        HERO
+===========================*/
+
+.hero{
+
+    min-height:85vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px 8%;
+
+}
+
+.hero h1{
+
+    font-size:65px;
+
+    margin-bottom:20px;
+
+    font-weight:700;
+
+    animation:fadeDown 1s ease;
+
+}
+
+.hero h2{
+
+    font-size:26px;
+
+    color:#d8d8d8;
+
+    margin-bottom:45px;
+
+    animation:fadeUp 1.3s ease;
+
+}
+
+/*==========================
+      SEARCH BOX
+===========================*/
+
+.search-box{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:18px;
+
+    border-radius:60px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+    animation:floatSearch 4s ease-in-out infinite;
+
+}
+
+.search-box input{
+
+    width:240px;
+
+    padding:16px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    font-size:16px;
+
+}
+
+.search-box input::placeholder{
+
+    color:#ddd;
+
+}
+
+.search-box button{
+
+    padding:16px 35px;
+
+    border:none;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    background:linear-gradient(45deg,#00d4ff,#8b5cf6);
+
+    transition:.4s;
+
+}
+
+.search-box button:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 12px 25px rgba(0,212,255,.5);
+
+}
+
+/*==========================
+      ANIMATIONS
+===========================*/
+
+@keyframes fadeDown{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes floatSearch{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+/*==========================
+      RESPONSIVE
+===========================*/
+
+@media(max-width:900px){
+
+.navbar{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.nav-links{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.hero h1{
+
+    font-size:42px;
+
+}
+
+.hero h2{
+
+    font-size:20px;
+
+}
+
+.search-box{
+
+    border-radius:20px;
+
+}
+
+.search-box input{
+
+    width:100%;
+
+}
+
+}
+/*=========================================
+        PART 2 - FEATURED JOBS
+==========================================*/
+
+.jobs{
+
+    padding:100px 8%;
+
+    position:relative;
+
+}
+
+/* Section Title */
+
+.h2{
+
+    text-align:center;
+
+    font-size:48px;
+
+    margin-bottom:60px;
+
+    color:#fff;
+
+    position:relative;
+
+}
+
+.h2::after{
+
+    content:"";
+
+    width:120px;
+
+    height:4px;
+
+    background:linear-gradient(90deg,#00d4ff,#8b5cf6);
+
+    position:absolute;
+
+    bottom:-18px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    border-radius:10px;
+
+}
+
+/* Cards Container */
+
+.job-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+}
+
+/* Job Card */
+
+.job-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+    transition:.5s;
+
+    transform-style:preserve-3d;
+
+}
+
+/* Top Glow */
+
+.job-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    background:rgba(0,212,255,.20);
+
+    border-radius:50%;
+
+    top:-120px;
+
+    right:-120px;
+
+    filter:blur(60px);
+
+}
+
+/* Bottom Glow */
+
+.job-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    background:rgba(139,92,246,.18);
+
+    border-radius:50%;
+
+    bottom:-90px;
+
+    left:-90px;
+
+    filter:blur(50px);
+
+}
+
+/* Hover Animation */
+
+.job-card:hover{
+
+    transform:
+
+    perspective(1000px)
+
+    rotateX(8deg)
+
+    rotateY(-8deg)
+
+    translateY(-18px)
+
+    scale(1.03);
+
+    box-shadow:
+
+    0 30px 60px rgba(0,212,255,.25);
+
+}
+
+/* Job Title */
+
+.job-card h3{
+
+    font-size:28px;
+
+    color:#00d4ff;
+
+    margin-bottom:20px;
+
+}
+
+/* Job Details */
+
+.job-card p{
+
+    font-size:16px;
+
+    color:#d8d8d8;
+
+    margin:12px 0;
+
+    line-height:1.7;
+
+}
+
+/* Apply Button */
+
+.job-card button{
+
+    margin-top:25px;
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:35px;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-weight:600;
+
+    background:linear-gradient(45deg,#00d4ff,#8b5cf6);
+
+    transition:.4s;
+
+}
+
+.job-card button:hover{
+
+    transform:scale(1.06);
+
+    box-shadow:0 10px 30px rgba(0,212,255,.45);
+
+}
+
+/* Floating Animation */
+
+.job-card:nth-child(1){
+
+    animation:cardFloat 5s infinite ease-in-out;
+
+}
+
+.job-card:nth-child(2){
+
+    animation:cardFloat 5s infinite ease-in-out;
+
+    animation-delay:1s;
+
+}
+
+.job-card:nth-child(3){
+
+    animation:cardFloat 5s infinite ease-in-out;
+
+    animation-delay:2s;
+
+}
+
+@keyframes cardFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.job-container{
+
+    grid-template-columns:1fr;
+
+}
+
+.h2{
+
+    font-size:36px;
+
+}
+
+.job-card{
+
+    padding:28px;
+
+}
+
+}
+
+/*=========================================
+        PART 3 - CAREER TIPS
+=========================================*/
+
+.career-tips{
+
+    padding:100px 8%;
+
+    position:relative;
+
+}
+
+/* Heading */
+
+.career-tips h2{
+
+    text-align:center;
+
+    font-size:48px;
+
+    color:#ffffff;
+
+    margin-bottom:20px;
+
+    position:relative;
+
+}
+
+.career-tips h2::after{
+
+    content:"";
+
+    width:120px;
+
+    height:4px;
+
+    background:linear-gradient(90deg,#00d4ff,#8b5cf6);
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-15px;
+
+    transform:translateX(-50%);
+
+    border-radius:20px;
+
+}
+
+.tips-subtitle{
+
+    text-align:center;
+
+    color:#d8d8d8;
+
+    font-size:18px;
+
+    margin-bottom:60px;
+
+}
+
+/* Tips Container */
+
+.tips-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:35px;
+
+}
+
+/* Tip Card */
+
+.tip-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:35px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+    transition:.5s;
+
+    transform-style:preserve-3d;
+
+}
+
+/* Glow */
+
+.tip-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    background:rgba(0,212,255,.18);
+
+    border-radius:50%;
+
+    top:-120px;
+
+    right:-120px;
+
+    filter:blur(70px);
+
+}
+
+.tip-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:170px;
+
+    height:170px;
+
+    background:rgba(139,92,246,.18);
+
+    border-radius:50%;
+
+    bottom:-90px;
+
+    left:-90px;
+
+    filter:blur(60px);
+
+}
+
+/* Hover */
+
+.tip-card:hover{
+
+    transform:
+
+    perspective(1000px)
+
+    rotateX(8deg)
+
+    rotateY(-8deg)
+
+    translateY(-15px)
+
+    scale(1.03);
+
+    box-shadow:0 25px 50px rgba(0,212,255,.25);
+
+}
+
+/* Icon */
+
+.tip-icon{
+
+    font-size:65px;
+
+    margin-bottom:20px;
+
+    animation:bounce 3s infinite;
+
+}
+
+/* Title */
+
+.tip-card h3{
+
+    color:#00d4ff;
+
+    margin-bottom:15px;
+
+    font-size:24px;
+
+}
+
+/* Description */
+
+.tip-card p{
+
+    color:#d8d8d8;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+}
+
+/* Link */
+
+.tip-card a{
+
+    display:inline-block;
+
+    padding:12px 28px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:linear-gradient(45deg,#00d4ff,#8b5cf6);
+
+    transition:.4s;
+
+}
+
+.tip-card a:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 12px 30px rgba(0,212,255,.4);
+
+}
+
+/* Floating Cards */
+
+.tip-card:nth-child(1){
+
+    animation:floatCard 5s ease-in-out infinite;
+
+}
+
+.tip-card:nth-child(2){
+
+    animation:floatCard 5s ease-in-out infinite;
+
+    animation-delay:1s;
+
+}
+
+.tip-card:nth-child(3){
+
+    animation:floatCard 5s ease-in-out infinite;
+
+    animation-delay:2s;
+
+}
+
+.tip-card:nth-child(4){
+
+    animation:floatCard 5s ease-in-out infinite;
+
+    animation-delay:3s;
+
+}
+
+/* Animations */
+
+@keyframes floatCard{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+@keyframes bounce{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.career-tips h2{
+
+    font-size:36px;
+
+}
+
+.tips-container{
+
+    grid-template-columns:1fr;
+
+}
+
+.tip-card{
+
+    padding:28px;
+
+}
+
+.tip-icon{
+
+    font-size:55px;
+
+}
+
+}
+
+/*=========================================
+        PART 4 - FOOTER & FINAL EFFECTS
+==========================================*/
+
+/* FOOTER */
+
+.footer{
+
+    padding:70px 8% 30px;
+
+    margin-top:80px;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(20px);
+
+    border-top:1px solid rgba(255,255,255,.12);
+
+}
+
+.footer-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:40px;
+
+}
+
+.footer-section h3{
+
+    color:#00d4ff;
+
+    font-size:26px;
+
+    margin-bottom:20px;
+
+}
+
+.footer-section p{
+
+    color:#d8d8d8;
+
+    line-height:1.8;
+
+}
+
+.footer-section a{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:#ffffff;
+
+    margin:12px 0;
+
+    transition:.4s;
+
+}
+
+.footer-section a:hover{
+
+    color:#00d4ff;
+
+    transform:translateX(10px);
+
+}
+
+.copyright{
+
+    margin-top:50px;
+
+    text-align:center;
+
+    color:#bdbdbd;
+
+    border-top:1px solid rgba(255,255,255,.10);
+
+    padding-top:25px;
+
+}
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#071428;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(#00d4ff,#8b5cf6);
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#00d4ff;
+
+}
+
+/* ==========================
+   GLOW EFFECTS
+========================== */
+
+.job-card:hover,
+.tip-card:hover{
+
+    border:1px solid rgba(0,212,255,.45);
+
+}
+
+button:hover,
+.register-btn:hover{
+
+    filter:brightness(1.1);
+
+}
+
+/* ==========================
+   FLOATING CIRCLES
+========================== */
+
+.bg-circle{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+    animation:floatCircle 8s ease-in-out infinite;
+
+    z-index:-1;
+
+}
+
+.circle1{
+
+    width:100px;
+
+    height:100px;
+
+    left:5%;
+
+    top:30%;
+
+}
+
+.circle2{
+
+    width:150px;
+
+    height:150px;
+
+    right:8%;
+
+    top:20%;
+
+    animation-delay:2s;
+
+}
+
+.circle3{
+
+    width:80px;
+
+    height:80px;
+
+    left:45%;
+
+    bottom:8%;
+
+    animation-delay:4s;
+
+}
+
+@keyframes floatCircle{
+
+    0%,100%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-30px);
+
+    }
+
+}
+
+/* ==========================
+   SECTION SPACING
+========================== */
+
+section{
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+/* ==========================
+   SMOOTH HOVER
+========================== */
+
+a,
+button,
+.job-card,
+.tip-card{
+
+    transition:all .4s ease;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+.footer{
+
+    text-align:center;
+
+}
+
+.footer-container{
+
+    grid-template-columns:1fr;
+
+}
+
+.hero{
+
+    padding:80px 20px;
+
+}
+
+.hero h1{
+
+    font-size:38px;
+
+}
+
+.hero h2{
+
+    font-size:18px;
+
+}
+
+.search-box{
+
+    flex-direction:column;
+
+}
+
+.search-box input{
+
+    width:100%;
+
+}
+
+.search-box button{
+
+    width:100%;
+
+}
+
+.nav-links{
+
+    gap:18px;
+
+}
+
+.buttons{
+
+    flex-direction:column;
+
+    width:100%;
+
+}
+
+.login-btn,
+.register-btn{
+
+    text-align:center;
+
+}
+
+}
+</style>
+
+    
+
+
+
+
+
+<!-- NAVBAR -->
+<header>
+    <nav class="navbar">
+
+        <div>
+           
+            <h2>📝CareerHub</h2>
+        </div>
+
+        <!-- NAV LINKS -->
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="jobs.html">Jobs</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- BUTTONS -->
+        <div class="buttons">
+            <a href="login.html" class="login-btn">Login</a>
+            <a href="register.html" class="register-btn">Register</a>
+        </div>
+
+    </nav>
+</header>
+<!-- HERO SECTION -->
+<section class="hero">
+    <h1>Welcome Back👋</h1>
+    <h2>Find your dream job and start applying today</h2>
+
+</section>
+
+<!-- CAREER TIPS -->
+<section class="career-tips">
+
+    <h2>Career Tips</h2>
+
+    <p class="tips-subtitle">
+        Learn essential skills and prepare yourself for your dream career.
+    </p>
+
+    <div class="tips-container">
+
+        <div class="tip-card">
+            <div class="tip-icon">📝</div>
+            <h3>Resume Building</h3>
+            <p>Create a professional resume that highlights your skills and achievements.</p>
+            <a href="resume.html">Learn More →</a>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">👩🏻‍💻</div>
+            <h3>Interview Preparation</h3>
+            <p>Practice common interview questions and improve your confidence.</p>
+            <a href="interview.html">Learn More →</a>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">💼</div>
+            <h3>LinkedIn Profile Tips</h3>
+            <p>Build a strong LinkedIn profile to attract recruiters.</p>
+            <a href="linked.html">Learn More →</a>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">🚀</div>
+            <h3>Career Roadmap</h3>
+            <p>Plan your learning journey step by step.</p>
+            <a href="roadmap.html">Learn More →</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h3>CareerHub</h3>
+            <p>
+                CareerHub helps job seekers find opportunities and build careers.
+            </p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <a href="https://www.linkedin.com/" target="_blank">ℹ️ LinkedIn</a>
+            <a href="https://www.instagram.com/" target="_blank">🅾  Instagram</a>
+            <a href="https://www.facebook.com/" target="_blank">ⓕ Facebook</a>
+        </div>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 CareerHub. All Rights Reserved.
+    </p>
+
+</footer>
+
+<!-- SCRIPTS (IMPORTANT: bottom only) -->
+
+<script>
+
+    const jobs = [
+  {
+    id: 1,
+    title: "Python Developer",
+    company: "Google",
+    location: "Bangalore",
+    salary: "₹10 LPA",
+    experience: "0-2 Years",
+    type: "Full Time"
+  },
+  {
+    id: 2,
+    title: "Java Developer",
+    company: "Infosys",
+    location: "Chennai",
+    salary: "₹6 LPA",
+    experience: "0-1 Years",
+    type: "Full Time"
+  },
+  {
+    id: 3,
+    title: "Software Tester",
+    company: "TCS",
+    location: "Hyderabad",
+    salary: "₹5 LPA",
+    experience: "0-2 Years",
+    type: "Full Time"
+  },
+  {
+    id: 4,
+    title: "Cloud Engineer",
+    company: "Wipro",
+    location: "Pune",
+    salary: "₹8 LPA",
+    experience: "1-3 Years",
+    type: "Full Time"
+  },
+  {
+    id: 5,
+    title: "DevOps Engineer",
+    company: "Accenture",
+    location: "Bangalore",
+    salary: "₹9 LPA",
+    experience: "1-3 Years",
+    type: "Full Time"
+  },
+  {
+    id: 6,
+    title: "Frontend Developer",
+    company: "Zoho",
+    location: "Chennai",
+    salary: "₹7 LPA",
+    experience: "0-2 Years",
+    type: "Full Time"
+  },
+  {
+    id: 7,
+    title: "Backend Developer",
+    company: "IBM",
+    location: "Bangalore",
+    salary: "₹8 LPA",
+    experience: "1-3 Years",
+    type: "Full Time"
+  },
+  {
+    id: 8,
+    title: "Full Stack Developer",
+    company: "Adobe",
+    location: "Hyderabad",
+    salary: "₹12 LPA",
+    experience: "2-4 Years",
+    type: "Full Time"
+  },
+  {
+    id: 9,
+    title: "React Developer",
+    company: "Flipkart",
+    location: "Bangalore",
+    salary: "₹9 LPA",
+    experience: "1-3 Years",
+    type: "Full Time"
+  },
+  {
+    id: 10,
+    title: "Angular Developer",
+    company: "Paytm",
+    location: "Noida",
+    salary: "₹8 LPA",
+    experience: "1-3 Years",
+    type: "Full Time"
+  },
+  {
+    id: 11,
+    title: "PHP Developer",
+    company: "Freshworks",
+    location: "Chennai",
+    salary: "₹6 LPA",
+    experience: "0-2 Years",
+    type: "Full Time"
+  },
+  {
+    id: 12,
+    title: "Node.js Developer",
+    company: "Oracle",
+    location: "Bangalore",
+    salary: "₹10 LPA",
+    experience: "2-4 Years",
+    type: "Full Time"
+  },
+  {
+    id: 13,
+    title: "Data Analyst",
+    company: "Capgemini",
+    location: "Hyderabad",
+    salary: "₹7 LPA",
+    experience: "0-2 Years",
+    type: "Full Time"
+  },
+  {
+    id: 14,
+    title: "Data Scientist",
+    company: "Microsoft",
+    location: "Bangalore",
+    salary: "₹15 LPA",
+    experience: "2-5 Years",
+    type: "Full Time"
+  },
+  {
+    id: 15,
+    title: "Business Analyst",
+    company: "HCL",
+    location: "Noida",
+    salary: "₹7 LPA",
+    experience: "1-3 Years",
+    type: "Full Time"
+  },
+  {
+    id: 16,
+    title: "Cyber Security Analyst",
+    company: "Tech Mahindra",
+    location: "Pune",
+    salary: "₹9 LPA",
+    experience: "1-3 Years",
+    type: "Full Time"
+  },
+  {
+    id: 17,
+    title: "Network Engineer",
+    company: "Cisco",
+    location: "Bangalore",
+    salary: "₹8.5 LPA",
+    experience: "1-3 Years",
+    type: "Full Time"
+  },
+  {
+    id: 18,
+    title: "Linux Administrator",
+    company: "Red Hat",
+    location: "Pune",
+    salary: "₹8 LPA",
+    experience: "1-3 Years",
+    type: "Full Time"
+  },
+  {
+    id: 19,
+    title: "AWS Cloud Engineer",
+    company: "Amazon",
+    location: "Hyderabad",
+    salary: "₹11 LPA",
+    experience: "2-4 Years",
+    type: "Full Time"
+  },
+  {
+    id: 20,
+    title: "Azure Cloud Engineer",
+    company: "Microsoft",
+    location: "Bangalore",
+    salary: "₹12 LPA",
+    experience: "2-4 Years",
+    type: "Full Time"
+  },
+  {
+    id: 21,
+    title: "QA Engineer",
+    company: "LTIMindtree",
+    location: "Chennai",
+    salary: "₹6.5 LPA",
+    experience: "0-2 Years",
+    type: "Full Time"
+  },
+  {
+    id: 22,
+    title: "Automation Tester",
+    company: "Deloitte",
+    location: "Hyderabad",
+    salary: "₹8 LPA",
+    experience: "1-3 Years",
+    type: "Full Time"
+  },
+  {
+    id: 23,
+    title: "Manual Tester",
+    company: "Hexaware",
+    location: "Chennai",
+    salary: "₹5.5 LPA",
+    experience: "0-2 Years",
+    type: "Full Time"
+  },
+  {
+    id: 24,
+    title: "Machine Learning Engineer",
+    company: "NVIDIA",
+    location: "Bangalore",
+    salary: "₹14 LPA",
+    experience: "2-5 Years",
+    type: "Full Time"
+  },
+  {
+    id: 25,
+    title: "AI Engineer",
+    company: "OpenText",
+    location: "Hyderabad",
+    salary: "₹13 LPA",
+    experience: "2-5 Years",
+    type: "Full Time"
+  },
+  {
+    id: 26,
+    title: "Database Administrator",
+    company: "Intel",
+    location: "Bangalore",
+    salary: "₹9 LPA",
+    experience: "2-4 Years",
+    type: "Full Time"
+  },
+  {
+    id: 27,
+    title: "Android Developer",
+    company: "Samsung",
+    location: "Noida",
+    salary: "₹9 LPA",
+    experience: "1-3 Years",
+    type: "Full Time"
+  },
+  {
+    id: 28,
+    title: "iOS Developer",
+    company: "Apple",
+    location: "Hyderabad",
+    salary: "₹14 LPA",
+    experience: "2-5 Years",
+    type: "Full Time"
+  },
+  {
+    id: 29,
+    title: "Technical Support Engineer",
+    company: "HP",
+    location: "Chennai",
+    salary: "₹5 LPA",
+    experience: "0-2 Years",
+    type: "Full Time"
+  },
+  {
+    id: 30,
+    title: "IT Help Desk Engineer",
+    company: "Dell Technologies",
+    location: "Bangalore",
+    salary: "₹5.5 LPA",
+    experience: "0-2 Years",
+    type: "Full Time"
+  }
+];
+
+
+const container = document.getElementById("jobContainer");
+
+function displayJobs() {
+    container.innerHTML = "";
+
+    jobs.forEach((job, index) => {
+        const card = document.createElement("div");
+        card.classList.add("job-card");
+
+        // animation delay
+        card.style.animationDelay = `${index * 0.1}s`;
+
+        card.innerHTML =  `
+            <h3>${job.title}</h3>
+            <p>📍 ${job.location}</p>
+            <p>💼 ${job.type}</p>
+            <button> Apply Now </button>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+window.onload = displayJobs;
+
+
+
+// ------------------------
+// HOME PAGE
+// ------------------------
+
+function searchJobs() {
+    let title = document.getElementById("jobTitle").value || "";
+    let location = document.getElementById("location").value || "";
+
+    localStorage.setItem("title", title);
+    localStorage.setItem("location", location);
+
+    window.location.href = "jobs.html";
+}
+
+
+// ------------------------
+// JOBS PAGE
+// ------------------------
+
+if (window.location.pathname.includes("jobs.html")) {
+
+    let searchTitle = (localStorage.getItem("title") || "").toLowerCase();
+    let searchLocation = (localStorage.getItem("location") || "").toLowerCase();
+
+    let container = document.getElementById("jobContainer");
+
+    let result = jobs.filter(job => {
+        return job.title.toLowerCase().includes(searchTitle) &&
+               job.location.toLowerCase().includes(searchLocation);
+    });
+
+    if (result.length === 0) {
+        container.innerHTML = "<h2>No Jobs Found</h2>";
+    } else {
+
+        let html = "";
+
+        result.forEach(job => {
+            html += `
+                <div style="border:1px solid black;padding:20px;margin:20px;">
+                    <h2>${job.title}</h2>
+                    <p>Company : ${job.company}</p>
+                    <p>Location : ${job.location}</p>
+                    <p>Salary : ${job.salary}</p>
+                    <button onclick="alert('Applied Successfully!')">Apply Now</button>
+                </div>
+            `;
+        });
+
+        container.innerHTML = html;
+    }
+}
+
+// LOGIN VALIDATION
+document.getElementById("loginForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if(user === "careerhub_user" && pass === "Career@123"){
+        alert("Login Successful 🚀 Welcome to CareerHub");
+        window.location.href = "index.html";
+    } else {
+        alert("Invalid username or password ❌");
+    }
+});
+
+// SHOW / HIDE PASSWORD
+function togglePassword(){
+    let pass = document.getElementById("password");
+
+    if(pass.type === "password"){
+        pass.type = "text";
+    } else {
+        pass.type = "password";
+    }
+}
+
+
+
+</script>
+
+
+
+</body>
+</html> 
